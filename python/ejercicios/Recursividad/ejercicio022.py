@@ -11,20 +11,29 @@
 
 #   c. Utilizar un vector para representar la mochila.
 
-def sacar_sable(lista):
-    if len(lista) > 0:
-        if lista[0] == 'sable de luz':
-            return 0
-        else:
-            print(lista.pop(0))
-            return 1 + sacar_sable(lista)
+#def sacar_sable(lista):
+#    if len(lista) > 0:
+#        if lista[0] == 'sable de luz':
+#            return 0
+#        else:
+#            print(lista.pop(0))
+#            return 1 + sacar_sable(lista)
+#    else:
+#        return 0
+    
+def busqueda_secuencial(lista, buscado):
+    if len(lista) == 0:
+        return -1
+    elif lista[-1] == buscado:
+        return len(lista)-1
     else:
-        return 0
+        return busqueda_secuencial(lista[0:-1], buscado)
     
 lista = ['libro','linterna','celular','ropa','vino','sable de luz']
 
-print(sacar_sable(lista))
-if len(lista) > 0:
+#print(sacar_sable(lista))
+
+if busqueda_secuencial(lista,'sable de luz') > -1:
     print('Se encontro el sable de luz')
 else:
     print('No hay sable XD')
