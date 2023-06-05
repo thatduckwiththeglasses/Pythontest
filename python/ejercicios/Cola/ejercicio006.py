@@ -17,7 +17,7 @@ i = 0
     
 contador = 0
 
-while cola.size() > i:
+while cola.size() >= i:
     valor = cola.atention()
     if valor == buscado:
         contador += 1
